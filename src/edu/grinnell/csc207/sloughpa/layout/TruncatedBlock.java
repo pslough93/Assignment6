@@ -1,8 +1,7 @@
 package edu.grinnell.csc207.sloughpa.layout;
 
-public class TruncatedBlock
-implements TextBlock
-{
+public class TruncatedBlock implements TextBlock{
+	
 	TextBlock contents;
 	int width;
 /**

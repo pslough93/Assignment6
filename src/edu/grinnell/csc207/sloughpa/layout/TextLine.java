@@ -67,6 +67,11 @@ public class TextLine
     return this.line.length();
   } // width()
   
+  /**
+   * setContents - allows user to set contents of textline for Part B
+   * PreConditions: none
+   * Postconditions: will reset contents to newContents
+   */
   public void setContents(String newContents){
 	  this.line = newContents;
   }
