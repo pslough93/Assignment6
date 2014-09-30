@@ -21,13 +21,21 @@ public class TBExpt
     PrintWriter pen = new PrintWriter(System.out, true);
 
     // Create a block to use
-    TextLine block = new TextLine("Hello");
-    TextBlock block1 = new BlockPair(block);
-    TBUtils.print(pen, block1);
-    
-    block.setContents("Goodbye");
-    TextBlock block2 = new BlockPair(block);
-    TBUtils.print(pen, block2);
+    TextLine tb1 = new TextLine("Hello");
+    TextLine tb2 = new TextLine("World");
+    TextBlock compound = new BoxedBlock(new CenteredBlock(new BoxedBlock(
+        new CenteredBlock(new VComposition(tb1, tb2), 7)), 15));
+    pen.println("ORIGINAL");
+    TBUtils.print(pen, compound);
+    tb2.setContents("Someone");
+    pen.println("UPDATED");
+    TBUtils.print(pen, compound);
+    tb1.setContents("Nice to meet you,");
+    pen.println("RE-UPDATED");
+    pen.println(compound.width());
+    TBUtils.print(pen, compound);
+
+
     
     // Clean up after ourselves.
     pen.close();
